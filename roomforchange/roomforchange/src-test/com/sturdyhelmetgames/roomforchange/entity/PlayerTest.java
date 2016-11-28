@@ -44,7 +44,7 @@ public class PlayerTest {
 	@Test
     public void drawAttackRightTest() {
 		Player player = new Player(0, 0, level);
-		player.direction = Direction.Right;
+		player.direction = Direction.RIGHT;
 		player.setTryHitTime(0.2f);
 		player.bounds.x = 0;
 		player.bounds.y = 0;
