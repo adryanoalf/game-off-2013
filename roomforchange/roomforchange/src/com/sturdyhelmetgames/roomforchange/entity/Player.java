@@ -19,7 +19,11 @@ import com.badlogic.gdx.math.Rectangle;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 import com.sturdyhelmetgames.roomforchange.level.Level.LevelTile;
-
+/**
+ * This class represents the player in the game
+ * @author root
+ *
+ */
 public class Player extends Entity {
 
 	public float dyingAnimState = 0f;
@@ -120,6 +124,9 @@ public class Player extends Entity {
 	private static final float HIT_DISTANCE = 0.5f;
 	private final Rectangle leverRect = new Rectangle();
 
+	/**
+	 * tries to hit something in the level
+	 */
 	public void tryHit() {
 		if (!isDying() && !isDead() && !isFalling()) {
 			tryHitTime = 0f;
@@ -157,6 +164,11 @@ public class Player extends Entity {
 		}
 	}
 
+	/**
+	 * Tries to hi the lever
+	 * @param x height
+	 * @param y width
+	 */
 	private void tryHitLever(int x, int y) {
 		LevelTile tile = level.getTiles()[x][y];
 		if (tile.type == Level.LevelTileType.LEVER) {
@@ -164,6 +176,10 @@ public class Player extends Entity {
 		}
 	}
 
+	/**
+	 * Decreases the life of the player
+	 * checks if his life is above 0
+	 */
 	public void takeDamage() {
 		if (!isInvulnerable()) {
 			health--;
@@ -183,18 +199,32 @@ public class Player extends Entity {
 		}
 	}
 
+	/**
+	 * Increases the player life in 1
+	 */
 	public void gainHealth() {
 		health++;
 	}
-
+	
+	/**
+	 * Checks if the player is invulnerable
+	 * @return
+	 */
 	public boolean isInvulnerable() {
 		return invulnerableTick > 0f;
 	}
 
+	/**
+	 * checks if the player has collected all the treasures in the game
+	 * @return true case the player has collected all treasures in the game
+	 */
 	public boolean canFinishGame() {
 		return gotGem && gotScroll && gotTalisman;
 	}
 
+	/**
+	 * Checks if the player has bombs, if so, it drops a bomb in the player current tile
+	 */
 	public void dropBomb() {
 		if (level.player.bombs > 0) {
 			level.player.bombs--;

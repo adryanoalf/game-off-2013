@@ -37,6 +37,12 @@ import com.sturdyhelmetgames.roomforchange.level.Level;
 import com.sturdyhelmetgames.roomforchange.tween.Vector3Accessor;
 import com.sturdyhelmetgames.roomforchange.util.LabyrinthUtil;
 
+/**
+ * This class is responsible for the in game screen,
+ * the player movement, rendering of the screen and it's itens
+ * @author root
+ *
+ */
 public class GameScreen extends Basic2DScreen {
 
 	public static final int SCALE = 20;
@@ -73,6 +79,10 @@ public class GameScreen extends Basic2DScreen {
 		level = LabyrinthUtil.generateLabyrinth(4, 4, this);
 	}
 
+	/**
+	 * Updates the screen
+	 * Updates camera position
+	 */
 	@Override
 	protected void updateScreen(float fixedStep) {
 		processKeys();
@@ -94,6 +104,9 @@ public class GameScreen extends Basic2DScreen {
 		cameraTweenManager.update(fixedStep);
 	}
 
+	/**
+	 * Renders the screen and its itens
+	 */
 	@Override
 	public void renderScreen(float delta) {
 		spriteBatch.setProjectionMatrix(camera.combined);
@@ -208,6 +221,9 @@ public class GameScreen extends Basic2DScreen {
 		}
 	}
 
+	/**
+	 * Checks for key press, Moves the player
+	 */
 	protected void processKeys() {
 		if (!paused && level.player.isAlive()) {
 			// process player movement keys
@@ -235,6 +251,9 @@ public class GameScreen extends Basic2DScreen {
 		}
 	}
 
+	/**
+	 * Checks for key hit, utilizes bombs, attacks
+	 */
 	@Override
 	public boolean keyDown(int keycode) {
 		// if (keycode == Keys.W) {
@@ -270,12 +289,21 @@ public class GameScreen extends Basic2DScreen {
 		batchMiniMap.dispose();
 	}
 
+	/**
+	 * Updates the camera position
+	 * @param xOffset height
+	 * @param yOffset width
+	 */
 	public void updateCameraPos(float xOffset, float yOffset) {
 		camera.position.set(camera.position.x + xOffset, camera.position.y
 				+ yOffset, 0f);
 		camera.update();
 	}
 
+	/**
+	 * calls for a screen quake
+	 * @param dir
+	 */
 	public void startScreenQuake(final int dir) {
 		screenQuake.activate(2.8f, new Runnable() {
 			@Override
@@ -315,10 +343,15 @@ public class GameScreen extends Basic2DScreen {
 		level.pauseEntities();
 	}
 
+	/**
+	 * calls for the lever screen {@link LeverScreen}
+	 */
 	public void openLeverScreen() {
 		game.setScreen(new LeverScreen(game, this));
 	}
-
+	/**
+	 * calls for the game over screen {@link GameOverScreen}
+	 */
 	public void gameOver() {
 		game.setScreen(new GameOverScreen(game, this));
 	}
@@ -329,6 +362,9 @@ public class GameScreen extends Basic2DScreen {
 		Gdx.input.setInputProcessor(this);
 	}
 
+	/**
+	 * calls for the win screen {@link WinTheGameScreen}
+	 */
 	public void finishGame() {
 		game.setScreen(new WinTheGameScreen(game, this));
 	}

@@ -19,6 +19,11 @@ import org.robovm.cocoatouch.uikit.UIApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
 
+/**
+ * This class is responsible for making the game ios friendly. 
+ * @author root
+ *
+ */
 public class RobovmLauncher extends IOSApplication.Delegate {
 	@Override
 	protected IOSApplication createApplication() {

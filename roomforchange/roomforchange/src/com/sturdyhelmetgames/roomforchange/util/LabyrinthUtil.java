@@ -28,8 +28,23 @@ import com.sturdyhelmetgames.roomforchange.level.Level.LevelTileType;
 import com.sturdyhelmetgames.roomforchange.level.PieceTemplate;
 import com.sturdyhelmetgames.roomforchange.screen.GameScreen;
 
+/**
+ * This class is responsible for creating the game levels, it also selects a level to
+ * spawn the treasures and the player. 
+ * @author root
+ *
+ */
 public class LabyrinthUtil {
 
+	/**
+	 * This method is responsible for creating the game map, it always put a 
+	 * ladder in the first chamber, it also places the treasures in random chambers
+	 * and the player.  
+	 * @param width The width of the map
+	 * @param height The height of the map
+	 * @param gameScreen Screen context
+	 * @return
+	 */
 	public static Level generateLabyrinth(int width, int height,
 			GameScreen gameScreen) {
 		final Level level = new Level(gameScreen);
@@ -77,7 +92,11 @@ public class LabyrinthUtil {
 
 		return level;
 	}
-
+	
+	/**
+	 * Inserts a chamber in the map.
+	 * @param level Chamber to be inserted. 
+	 */
 	public static void updateLabyrinthTiles(Level level) {
 		final LabyrinthPiece[][] labyrinth = level.getLabyrinth();
 		final int labyrinthWidth = labyrinth.length;
@@ -104,6 +123,12 @@ public class LabyrinthUtil {
 		}
 	}
 
+	/**
+	 * Randomly inserts treasures in a chamber 
+	 * @param labyrinth map
+	 * @param treasureClass type of treasure
+	 * @return true case the treasures has been place in a chamber, false otherwise
+	 */
 	private static boolean spawnTreasure(final LabyrinthPiece[][] labyrinth,
 			Class<?> treasureClass) {
 		final int labyrinthWidth = labyrinth.length;
@@ -123,6 +148,13 @@ public class LabyrinthUtil {
 		return false;
 	}
 
+	/**
+	 * Closes all doors of a chamber
+	 * @param labyrinth map
+	 * @param x Height position in the map
+	 * @param y Width position in the map
+	 * @param piece Piece in witch the doors will be closed
+	 */
 	private static void setAllFourDoorsClosedIfNeeded(
 			final LabyrinthPiece[][] labyrinth, int x, int y,
 			LabyrinthPiece piece) {
@@ -151,6 +183,11 @@ public class LabyrinthUtil {
 				labyrinthPiece2, labyrinthPiece3, labyrinthPiece4 });
 	}
 
+	/**
+	 * Closes the doors of a chamber
+	 * @param piece Chamber
+	 * @param surroundingPieces Surrounding Chambers
+	 */
 	private static void setDoorClosed(LabyrinthPiece piece,
 			LabyrinthPiece[] surroundingPieces) {
 		final LevelTile[][] tiles = piece.getTiles();

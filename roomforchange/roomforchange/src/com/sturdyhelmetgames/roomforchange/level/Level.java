@@ -35,6 +35,11 @@ import com.sturdyhelmetgames.roomforchange.level.LabyrinthPiece.LabyrinthPieceSt
 import com.sturdyhelmetgames.roomforchange.screen.GameScreen;
 import com.sturdyhelmetgames.roomforchange.util.LabyrinthUtil;
 
+/**
+ * This class is responsible for managing the game map
+ * @author root
+ *
+ */
 public class Level {
 
 	public final TweenManager entityTweenManager = new TweenManager();

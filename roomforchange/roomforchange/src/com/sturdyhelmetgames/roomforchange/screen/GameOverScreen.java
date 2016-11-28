@@ -13,6 +13,9 @@
    limitations under the License. */
 package com.sturdyhelmetgames.roomforchange.screen;
 
+/**
+ * This class is responsible for the game over screen, shown when the player dies
+ */
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.sturdyhelmetgames.roomforchange.RoomForChangeGame;
@@ -32,6 +35,9 @@ public class GameOverScreen extends Basic2DScreen {
 
 	}
 
+	/**
+	 * Renders the screen
+	 */
 	@Override
 	public void renderScreen(float delta) {
 		gameScreen.renderScreen(delta);
@@ -46,6 +52,9 @@ public class GameOverScreen extends Basic2DScreen {
 		spriteBatch.end();
 	}
 
+	/**
+	 * Checks for a key hit, if y starts a new game {@link GameScreen} if n go to menu screen {@link MenuScreen} 
+	 */
 	@Override
 	public boolean keyDown(int keycode) {
 		if (keycode == Keys.Y) {

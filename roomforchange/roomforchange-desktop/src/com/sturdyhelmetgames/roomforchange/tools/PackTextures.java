@@ -4,6 +4,11 @@ import com.badlogic.gdx.tools.imagepacker.TexturePacker2;
 import com.badlogic.gdx.tools.imagepacker.TexturePacker2.Settings;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 
+/**
+ * This class is responsible for loading the game assets for the desktop version 
+ * @author root
+ *
+ */
 public class PackTextures {
 
 	private static final String UNPROCESSED_FOLDER = "C:\\Users\\Antti\\workspace\\game-assets\\roomforchange\\unprocessed";

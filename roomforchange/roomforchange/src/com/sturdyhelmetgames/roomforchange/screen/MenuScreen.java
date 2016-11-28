@@ -17,6 +17,11 @@ import com.badlogic.gdx.Input.Keys;
 import com.sturdyhelmetgames.roomforchange.RoomForChangeGame;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 
+/**
+ * This class render the menu screen
+ * @author root
+ *
+ */
 public class MenuScreen extends Basic2DScreen {
 
 	public MenuScreen(RoomForChangeGame game) {
@@ -28,6 +33,9 @@ public class MenuScreen extends Basic2DScreen {
 
 	}
 
+	/**
+	 * Renders the screen
+	 */
 	@Override
 	public void renderScreen(float delta) {
 		spriteBatch.setProjectionMatrix(camera.combined);
@@ -37,6 +45,10 @@ public class MenuScreen extends Basic2DScreen {
 		spriteBatch.end();
 	}
 
+	/**
+	 * Verifies if a key has been pressed
+	 * if the SPACE key has been pressed it will show the menu screen {@link HelpScreen}
+	 */
 	@Override
 	public boolean keyDown(int keycode) {
 		if (keycode == Keys.SPACE) {

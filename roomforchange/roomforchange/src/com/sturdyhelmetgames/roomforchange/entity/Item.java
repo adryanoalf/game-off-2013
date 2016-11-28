@@ -16,6 +16,11 @@ package com.sturdyhelmetgames.roomforchange.entity;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 
+/**
+ * Basic item class, all items for the games extends it
+ * @author root
+ *
+ */
 public abstract class Item extends Entity {
 
 	public boolean collected = false;

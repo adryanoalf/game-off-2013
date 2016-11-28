@@ -16,6 +16,12 @@ package com.sturdyhelmetgames.roomforchange;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
+/**
+ * this is the root class of the desktop deploy, it is responsible for launching it
+ * utilizing {@link LwjglApplication} 
+ * @author root
+ *
+ */
 public class Main {
 	public static void main(String[] args) {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();

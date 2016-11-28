@@ -19,6 +19,11 @@ import com.badlogic.gdx.math.MathUtils;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 
+/**
+ * This class represents the game enemy Snake
+ * @author root
+ *
+ */
 public class Snake extends Enemy {
 
 	public Snake(float x, float y, Level level) {

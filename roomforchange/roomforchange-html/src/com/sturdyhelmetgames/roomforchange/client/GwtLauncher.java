@@ -17,7 +17,12 @@ import com.sturdyhelmetgames.roomforchange.RoomForChangeGame;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-
+/**
+ * This class is responsible for launching the game utilizing {@link GwtApplication}
+ * for web deployment  
+ * @author root
+ *
+ */
 public class GwtLauncher extends GwtApplication {
 	@Override
 	public GwtApplicationConfiguration getConfig() {

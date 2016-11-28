@@ -22,6 +22,11 @@ import com.sturdyhelmetgames.roomforchange.entity.Snake;
 import com.sturdyhelmetgames.roomforchange.entity.Spider;
 import com.sturdyhelmetgames.roomforchange.level.Level.LevelTileType;
 
+/**
+ * Class template for a chamber
+ * @author root
+ *
+ */
 public class RoomTemplate {
 
 	public static final int WIDTH = 10;

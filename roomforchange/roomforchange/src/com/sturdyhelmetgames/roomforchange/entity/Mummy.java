@@ -20,6 +20,11 @@ import com.badlogic.gdx.math.Vector2;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 
+/**
+ * This class represents the game enemy KingSpider
+ * @author root
+ *
+ */
 public class Mummy extends Enemy {
 
 	private float ACCEL_MAX = 1f;

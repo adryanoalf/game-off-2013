@@ -17,6 +17,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 
+/**
+ * This class represents the talisman treasure
+ * @author root
+ *
+ */
 public class Talisman extends Item {
 
 	public Talisman(float x, float y, Level level) {

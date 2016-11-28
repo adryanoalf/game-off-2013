@@ -18,6 +18,11 @@ import com.badlogic.gdx.graphics.Color;
 import com.sturdyhelmetgames.roomforchange.RoomForChangeGame;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 
+/**
+ * This class is responsible for the help menu screen 
+ * @author root
+ *
+ */
 public class HelpScreen extends Basic2DScreen {
 
 	private final GameScreen gameScreen;
@@ -32,6 +37,9 @@ public class HelpScreen extends Basic2DScreen {
 
 	}
 
+	/**
+	 * Renders the screen
+	 */
 	@Override
 	public void renderScreen(float delta) {
 		gameScreen.renderScreen(delta);
@@ -46,6 +54,9 @@ public class HelpScreen extends Basic2DScreen {
 
 	}
 
+	/**
+	 * Verifies is SPACE key has been pressed for exiting menu
+	 */
 	@Override
 	public boolean keyDown(int keycode) {
 		if (keycode == Keys.SPACE) {
@@ -54,6 +65,9 @@ public class HelpScreen extends Basic2DScreen {
 		return super.keyDown(keycode);
 	}
 
+	/**
+	 * Hide the screen
+	 */
 	@Override
 	public void hide() {
 		super.hide();

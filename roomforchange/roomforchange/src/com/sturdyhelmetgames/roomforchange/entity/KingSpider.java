@@ -17,6 +17,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 
+/**
+ * This class represents the game enemy KingSpider
+ * @author root
+ *
+ */
 public class KingSpider extends Spider {
 
 	public KingSpider(float x, float y, Level level) {

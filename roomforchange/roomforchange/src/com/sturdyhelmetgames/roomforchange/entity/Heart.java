@@ -17,6 +17,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 
+/**
+ * This class represents the player collectible item "hearth"
+ * It increases the player life
+ * @author root
+ *
+ */
 public class Heart extends Item {
 
 	public Heart(float x, float y, Level level) {
@@ -35,6 +41,10 @@ public class Heart extends Item {
 		}
 	}
 
+	/**
+	 * Action executed when the player collects the item
+	 * Increases the player health
+	 */
 	@Override
 	public void collectItem() {
 		super.collectItem();
