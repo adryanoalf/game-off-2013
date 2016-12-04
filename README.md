@@ -23,4 +23,11 @@ Try to collect all three artefacts and escape the pyramid! Have fun! :)
 * http://www.bfxr.net/
 * Audacity sound editor http://audacity.sourceforge.net/
 * Linux MultiMedia Studio http://lmms.sourceforge.net/
-* GraphicsGale http://www.humanbalance.net/gale/us/
+* GraphicsGale http://www.humanbalance.net/gale/us
+
+## Documentos gerados por nós
+
+*  [Framework e ferramentas utilizadas] (https://docs.google.com/document/d/1LcC8pjGz7zLgYOhGhCAg1bL4G11uRDlHcWor_NBNVGU/edit?usp=sharing)
+* [Documento de especificação de requisitos](https://docs.google.com/document/d/1hGiaLkAFlZYviIuemp6zIsG8Akyq5ZpMpR4mBmJwArM/edit?usp=sharing)
+* [Analise de documentação](https://docs.google.com/document/d/1FQVzvmhKzrHLAa_cda75k9DUpfV2k48spFNj1p84ArQ/edit?usp=sharing)
+* [Analise critica da documentação](https://docs.google.com/document/d/1qs-sxnu2NDA2J1eVxzdj988qJjhgWsibKgMJ75Y9pKM/edit?usp=sharing)
