@@ -25,7 +25,7 @@ Try to collect all three artefacts and escape the pyramid! Have fun! :)
 * Linux MultiMedia Studio http://lmms.sourceforge.net/
 * GraphicsGale http://www.humanbalance.net/gale/us
 
-## Documentos gerados por nós
+## Documentos de apoio ao projeto
 
 *  [Framework e ferramentas utilizadas] (https://docs.google.com/document/d/1LcC8pjGz7zLgYOhGhCAg1bL4G11uRDlHcWor_NBNVGU/edit?usp=sharing)
 * [Documento de especificação de requisitos](https://docs.google.com/document/d/1hGiaLkAFlZYviIuemp6zIsG8Akyq5ZpMpR4mBmJwArM/edit?usp=sharing)
