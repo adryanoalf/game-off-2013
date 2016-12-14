@@ -20,12 +20,13 @@ import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 import com.sturdyhelmetgames.roomforchange.level.Level.LevelTile;
 /**
- * This class represents the player in the game
+ * This class represents the base player in the game
  * @author root
  *
  */
 public class Player extends Entity {
 
+	//Player attributes
 	public float dyingAnimState = 0f;
 	public float dyingTime = 0f;
 	public float maxDyingTime = 3f;
@@ -34,12 +35,18 @@ public class Player extends Entity {
 	public int maxHealth = 5;
 	public final Rectangle hitBounds = new Rectangle(0f, 0f, 0.8f, 0.8f);
 	private float tryHitTime = 0.3f;
-
+	//Itens attributes
 	public UsableItem usableItem = null;
 	public boolean gotScroll = false;
 	public boolean gotTalisman = false;
 	public boolean gotGem = false;
 	
+	/**
+	*Player constructor
+	* @param x height location
+	* @param y width location
+	* @param The level tha the player will spawn
+	*/
 	public Player(float x, float y, Level level) {
 		super(x, y, 1f, 0.6f, level);
 		direction = Direction.UP;
@@ -54,6 +61,11 @@ public class Player extends Entity {
 		this.tryHitTime = tryHitTime;
 	}
 
+	/**
+	* Renders the player in the screen
+	* @param delta the size
+	* @param batch the player image
+	*/
 	@Override
 	public void render(float delta, SpriteBatch batch) {
 		super.render(delta, batch);
@@ -65,18 +77,27 @@ public class Player extends Entity {
 		drawAttack(batch);
 
 	}
-	
+	/**
+	* If the player have an iten, it will use it
+	*/
 	public void useItem(){
 		if (usableItem != null){
 			this.usableItem.useItem(this, level);
 			this.usableItem = null;
 		}
 	}
-	
+	/**
+	* gives the player an item
+	* @param item the item that the player will receive
+	*/	
 	public void pickupItem(UsableItem item) {
 		this.usableItem = item;
 	}
 	
+	/**
+	* Draws the player attack in the screen
+	* @param batch the image of the player attacking
+	*/
 	public void drawAttack(SpriteBatch batch) {
 		if (tryHitTime < 0.3) {
 			float rotation = 0f;
@@ -99,6 +120,9 @@ public class Player extends Entity {
 		}
 	}
 
+	/**
+	* Selects the correct animation for the player from a SpriteBaTch
+	*/
 	public void drawPlayer(SpriteBatch batch){
 		Animation animation = null;
 		
@@ -130,6 +154,9 @@ public class Player extends Entity {
 		}
 	}
 
+	/**
+	* Updates the player attributes
+	*/
 	@Override
 	public void update(float fixedStep) {
 
@@ -216,6 +243,10 @@ public class Player extends Entity {
 		}
 	}
 
+	/**
+	* Verifies if the player is falling
+	* if it is true, plays a sound
+	*/
 	@Override
 	protected void fall() {
 		if (!isFalling() && !isDead()) {
