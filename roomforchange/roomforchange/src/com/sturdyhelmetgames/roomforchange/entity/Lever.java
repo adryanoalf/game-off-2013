@@ -17,7 +17,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
-
+/**
+ * This class represents the usable item lever
+ * @author root
+ *
+ */
 public class Lever extends Entity {
 
 	public Lever(float x, float y, Level level) {

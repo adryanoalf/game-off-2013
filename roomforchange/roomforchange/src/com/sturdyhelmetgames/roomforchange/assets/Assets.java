@@ -30,7 +30,11 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.Array;
 import com.sturdyhelmetgames.roomforchange.level.PieceTemplate;
 import com.sturdyhelmetgames.roomforchange.level.RoomTemplate;
-
+/**
+ * This class is responsible for handling the assets of the game, location, name, etc..
+ * @author root
+ *
+ */
 public class Assets {
 
 	private static final AssetManager assetManager = new AssetManager();
@@ -164,7 +168,9 @@ public class Assets {
 
 	public static final Array<PieceTemplate> pieceTemplates = new Array<PieceTemplate>();
 	public static final Array<RoomTemplate> roomTemplates = new Array<RoomTemplate>();
-
+	/**
+	 * This method loads the game assets on the {@link AssetManager}
+	 */
 	public static void loadGameData() {
 		assetManager.load(ATLAS_FILEPATH_OBJECTS_ALL, TextureAtlas.class);
 

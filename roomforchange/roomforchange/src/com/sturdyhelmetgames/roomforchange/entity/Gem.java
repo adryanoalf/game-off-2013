@@ -16,7 +16,11 @@ package com.sturdyhelmetgames.roomforchange.entity;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
-
+/**
+ * This class represents the gem treasure
+ * @author root
+ *
+ */
 public class Gem extends Item {
 
 	public Gem(float x, float y, Level level) {
@@ -29,7 +33,9 @@ public class Gem extends Item {
 		if (aliveTick < ALIVE_TIME_MAX)
 			aliveTick = 1f;
 	}
-
+	/**
+	 * Render the item on the screen
+	 */
 	@Override
 	public void render(float delta, SpriteBatch batch) {
 		super.render(delta, batch);
@@ -37,7 +43,10 @@ public class Gem extends Item {
 		batch.draw(Assets.getGameObject("gem"), bounds.x,
 				bounds.y + zz, 0f, 0f, 1f, 1f, scale, scale, 0f);
 	}
-
+	/**
+	 * Action executed when the player collects the item
+	 * gives the player the gem
+	 */
 	@Override
 	public void collectItem() {
 		super.collectItem();

@@ -23,7 +23,11 @@ import com.sturdyhelmetgames.roomforchange.RandomUtil;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 import com.sturdyhelmetgames.roomforchange.tween.EntityAccessor;
-
+/**
+ * This class represents the game enemy Spider
+ * @author root
+ *
+ */
 public class Spider extends Enemy {
 
 	public Spider(float x, float y, Level level) {

@@ -24,9 +24,18 @@ import com.sturdyhelmetgames.roomforchange.screen.MenuScreen;
 import com.sturdyhelmetgames.roomforchange.tween.EntityAccessor;
 import com.sturdyhelmetgames.roomforchange.tween.Vector2Accessor;
 import com.sturdyhelmetgames.roomforchange.tween.Vector3Accessor;
-
+/**
+ * This class is responsible for creating the game environment  
+ * @author root
+ *
+ */
 public class RoomForChangeGame extends Game {
-
+	/**
+	 * Load the game assets
+	 * Initializes tweenengine
+	 * Sets the Screen
+	 * 
+	 */
 	@Override
 	public void create() {
 		Assets.loadGameData();
@@ -39,13 +48,18 @@ public class RoomForChangeGame extends Game {
 		setScreen(new MenuScreen(this));
 		// setScreen(new GameScreen(this));
 	}
-
+	/**
+	 * Close the game
+	 */
 	@Override
 	public void dispose() {
 		super.dispose();
 		Assets.clear();
 	}
-
+	/**
+	 * Checks if the game is running in debug mod
+	 * @return true case it is in debug, false otherwise 
+	 */
 	public boolean isDebug() {
 		return false;
 	}

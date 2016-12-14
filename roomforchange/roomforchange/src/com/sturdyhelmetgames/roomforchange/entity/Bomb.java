@@ -16,13 +16,25 @@ package com.sturdyhelmetgames.roomforchange.entity;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
-
+/**
+ * This class represents the player usable item "bomb"
+ * @author root
+ *
+ */
 public class Bomb extends Item {
-
+	/**
+	 * Constructor of class bomb, requires a height and width position 
+	 * and which level it's located in
+	 * @param x height position
+	 * @param y width position
+	 * @param level it's located
+	 */
 	public Bomb(float x, float y, Level level) {
 		super(x, y, 1f, 1f, level);
 	}
-
+	/**
+	 * Render the bomb on the screen
+	 */
 	@Override
 	public void render(float delta, SpriteBatch batch) {
 		super.render(delta, batch);
@@ -34,7 +46,10 @@ public class Bomb extends Item {
 					- 0.5f + zz, 0f, 0f, 1f, 1f, scale, scale, 0f);
 		}
 	}
-
+	/**
+	 * Action executed when the player collects the item
+	 * the player bombs is incremented 
+	 */
 	@Override
 	public void collectItem() {
 		super.collectItem();

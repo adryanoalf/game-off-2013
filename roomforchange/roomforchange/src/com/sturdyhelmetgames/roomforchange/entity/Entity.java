@@ -19,7 +19,11 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 import com.sturdyhelmetgames.roomforchange.level.Level.LevelTile;
-
+/**
+ * Root class for all itens, enemys, player in the game
+ * @author root
+ *
+ */
 public class Entity {
 
 	public Level level;
@@ -161,7 +165,10 @@ public class Entity {
 			stateTime += fixedStep;
 		}
 	}
-
+	/**
+	 * Moves the entity in a direction
+	 * @param dir direction to move
+	 */
 	public void moveWithAccel(Direction dir) {
 		if (dir == Direction.UP) {
 			accel.y = ACCEL_MAX;
@@ -175,7 +182,10 @@ public class Entity {
 		direction = dir;
 		state = EntityState.WALKING;
 	}
-
+	/**
+	 * Tries to move the entity
+	 * Verifies for holes, collidable tiles
+	 */
 	protected void tryMove() {
 		bounds.y += vel.y;
 		fetchCollidableRects();
@@ -220,11 +230,15 @@ public class Entity {
 			}
 		}
 	}
-
+	/**
+	 * sets the state of the entity to falling
+	 */
 	protected void fall() {
 		state = EntityState.FALLING;
 	}
-
+	/**
+	 * Fetches the nearby collidable tiles
+	 */
 	protected void fetchCollidableRects() {
 		int p1x = (int) bounds.x;
 		int p1y = (int) Math.floor(bounds.y);
@@ -297,7 +311,10 @@ public class Entity {
 			Gdx.app.log("Creature", "Creature went off screen");
 		}
 	}
-
+	/**
+	 * Checks if the entity is idle
+	 * @return true case the entity is idle
+	 */
 	public boolean isNotWalking() {
 		if (vel.x > -MIN_WALK_VELOCITY && vel.x < MIN_WALK_VELOCITY
 				&& vel.y > -MIN_WALK_VELOCITY && vel.y < MIN_WALK_VELOCITY) {
@@ -306,7 +323,10 @@ public class Entity {
 		}
 		return false;
 	}
-
+	/**
+	 * Verifies if the entity is falling
+	 * @return true case it's falling
+	 */
 	public void hit(Rectangle hitBounds) {
 
 	}
@@ -318,15 +338,24 @@ public class Entity {
 	public boolean isFalling() {
 		return state == EntityState.FALLING;
 	}
-
+	/**
+	 * Verifies if the entity is dying
+	 * @return true case it's dying
+	 */
 	public boolean isDying() {
 		return state == EntityState.DYING;
 	}
-
+	/**
+	 * Verifies if the entity is dead
+	 * @return true case it's dead
+	 */
 	public boolean isDead() {
 		return state == EntityState.DEAD;
 	}
-
+	/**
+	 * Verifies if the entity is alive
+	 * @return true case it's alive
+	 */
 	public boolean isAlive() {
 		return !isDying() && !isDead() && !isFalling();
 	}

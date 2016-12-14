@@ -16,7 +16,11 @@ package com.sturdyhelmetgames.roomforchange.screen;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.math.Vector3;
 import com.sturdyhelmetgames.roomforchange.RandomUtil;
-
+/**
+ * This class shake the game screen when called
+ * @author root
+ *
+ */
 public class ScreenQuake {
 
 	private float quakeTimeMax = 2f;
@@ -31,7 +35,10 @@ public class ScreenQuake {
 		quakeTime = 0f;
 		active = false;
 	}
-
+	/**
+	 * Updates the game screen to a new random value
+	 * @param fixedStep value that the screen can move(max final value = fixedStep*2)
+	 */
 	public void update(float fixedStep) {
 		quakeTime += fixedStep;
 		if (active) {
@@ -46,7 +53,11 @@ public class ScreenQuake {
 			}
 		}
 	}
-
+	/**
+	 * Moves the screen to a new position and sets a timer
+	 * @param quakeTimeMax time the the screen will stay shaken
+	 * @param callback 
+	 */
 	public void activate(float quakeTimeMax, Runnable callback) {
 		this.quakeTimeMax = quakeTimeMax;
 		this.callback = callback;
@@ -54,7 +65,9 @@ public class ScreenQuake {
 		active = true;
 		quakeTime = 0f;
 	}
-
+	/**
+	 * Returns the screen to its original position
+	 */
 	public void deactivate() {
 		active = false;
 		quakeTime = 0f;

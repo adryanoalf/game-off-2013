@@ -20,7 +20,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.sturdyhelmetgames.roomforchange.RoomForChangeGame;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
-
+/**
+ * This class render the screen show when the lever is used in a chamber
+ * @author root
+ *
+ */
 public class LeverScreen extends Basic2DScreen {
 
 	private final GameScreen gameScreen;
@@ -39,7 +43,9 @@ public class LeverScreen extends Basic2DScreen {
 		super(game, 12, 8);
 		this.gameScreen = gameScreen;
 	}
-
+	/**
+	 * Updates the scene rendered
+	 */
 	@Override
 	protected void updateScreen(float fixedStep) {
 		gameScreen.updateScreen(fixedStep);
@@ -52,7 +58,9 @@ public class LeverScreen extends Basic2DScreen {
 			}
 		}
 	}
-
+	/**
+	 * Render the screen
+	 */
 	@Override
 	public void renderScreen(float delta) {
 		gameScreen.renderScreen(delta);
@@ -79,7 +87,10 @@ public class LeverScreen extends Basic2DScreen {
 		spriteBatch.draw(region, -1f, -1f, 2f, 2f);
 		spriteBatch.end();
 	}
-
+	/**
+	 * Verifies if a key has been pressed
+	 * 
+	 */
 	@Override
 	public boolean keyDown(int keycode) {
 

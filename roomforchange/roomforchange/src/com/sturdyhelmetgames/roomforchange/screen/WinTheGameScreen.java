@@ -17,7 +17,11 @@ import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Color;
 import com.sturdyhelmetgames.roomforchange.RoomForChangeGame;
 import com.sturdyhelmetgames.roomforchange.assets.Assets;
-
+/**
+ * This class show the winning screen for the player
+ * @author root
+ *
+ */
 public class WinTheGameScreen extends Basic2DScreen {
 
 	private final GameScreen gameScreen;

@@ -38,7 +38,11 @@ import com.sturdyhelmetgames.roomforchange.screen.GameScreen;
 import com.sturdyhelmetgames.roomforchange.util.LabyrinthUtil;
 
 import aurelienribon.tweenengine.TweenManager;
-
+/**
+ * This class is responsible for managing the game map
+ * @author root
+ *
+ */
 public class Level {
 
 	public final TweenManager entityTweenManager = new TweenManager();

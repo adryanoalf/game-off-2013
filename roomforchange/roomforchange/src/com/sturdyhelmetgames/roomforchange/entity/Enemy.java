@@ -20,6 +20,12 @@ import com.sturdyhelmetgames.roomforchange.assets.Assets;
 import com.sturdyhelmetgames.roomforchange.level.Level;
 import com.sturdyhelmetgames.roomforchange.level.Level.LevelTile;
 
+/**
+ * This class represents a basic enemy in the game
+ * All enemy from the game extends this class
+ * @author root
+ *
+ */
 public class Enemy extends Entity {
 
 	protected int health;
@@ -59,7 +65,11 @@ public class Enemy extends Entity {
 			}
 		}
 	}
-
+	/**
+	 * Action taken when damage is inflicted
+	 * Decreases life, if life hits 0 kill the enemy
+	 * otherwise sets it invincible for a short period of time 
+	 */
 	public void takeDamage() {
 		if (pause <= 0f) {
 			health--;
@@ -73,7 +83,10 @@ public class Enemy extends Entity {
 			}
 		}
 	}
-
+	/**
+	 * Verifies if a hit is inside its max parameters
+	 * if so, it calls {@link takeDamage}
+	 */
 	@Override
 	public void hit(Rectangle hitBounds) {
 		if (hitBounds.overlaps(bounds)) {
@@ -85,7 +98,9 @@ public class Enemy extends Entity {
 	protected void fall() {
 		// do nothing
 	}
-
+	/**
+	 * Verifies which tiles the enemy is colliding and if it is off the screen
+	 */
 	@Override
 	protected void fetchCollidableRects() {
 		int p1x = (int) bounds.x;
